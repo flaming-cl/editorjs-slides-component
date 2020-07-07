@@ -1,6 +1,6 @@
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
 
-# Text Color Tool
+# Editor.js Slides Component
 STILL UNDER DEVELOPMENT, NOT FINISHED YET
 
 A React component for turning your editorjs blocks into web slides
