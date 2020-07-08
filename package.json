@@ -1,6 +1,6 @@
 {
   "name": "editorjs-slides-component",
-  "version": "0.0.3",
+  "version": "0.0.31",
   "description": "A React component for turning your editorjs blocks into web slides",
   "main": "lib/index.js",
   "scripts": {
