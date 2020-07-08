@@ -7,7 +7,7 @@ import 'reveal.js/dist/reveal.css';
 import './index.css';
 
 const EditorSlides = (props) => {
-    const { src, slidesConfig, theme } = props;
+    const { src, btnClassName, slidesConfig, theme } = props;
     const [slidesData, setSlidesData] = useState([]);
     const reveal = useRef();
     const slides = useRef();
@@ -88,7 +88,7 @@ const EditorSlides = (props) => {
     return (
         <div>
             <Slides reveal={reveal} slides={slides} slidesData={slidesData} />
-            <SlidesButton src={src} presentSlides={presentSlides}/>
+            <SlidesButton src={src} btnClassName={btnClassName} presentSlides={presentSlides} />
         </div>
     )
 };
