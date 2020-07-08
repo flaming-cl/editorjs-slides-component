@@ -25,7 +25,7 @@ const SlidesBtn = require('editorjs-slides-component');
 
 ## Usage
 
-Place the init button to your somewhere in your React project
+Place the init button to somewhere in your React project
 
 ```javascript
 
