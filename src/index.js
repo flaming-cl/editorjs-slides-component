@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import SlidesButton from './components/slidesBtn';
 import Slides from './components/slides';
 import Reveal from 'reveal.js';
-import 'reveal.js/dist/theme/black.css';
+import 'reveal.js/dist/reset.css';
 import 'reveal.js/dist/reveal.css';
+import 'reveal.js/dist/theme/solarized.css';
 import './index.css';
 
 const EditorSlides = (props) => {
@@ -33,7 +34,7 @@ const EditorSlides = (props) => {
         if (blocks.length) {
             for (var i = 0; i < blocks.length; i++) {
                 const singleBlock = blocks[i];
-                const hasContent = singleBlock.innerText && singleBlock.innerText.trim();
+                const hasContent = singleBlock.innerText.length;
                 if (hasContent) newSlideData.push(singleBlock.innerHTML);
             }
         }
@@ -42,20 +43,21 @@ const EditorSlides = (props) => {
 
     const initSlides = () => {
         const revealNode = reveal.current;
-
         if (revealNode) {
-            const deckInstance = new Reveal(revealNode, { embedded: true });
-            initSlidesInstance(deckInstance);
-            configSlidesInstance(deckInstance);
+            initSlideInstance();
+            configSlidesInstance();
         }
     };
 
-    const initSlidesInstance = (ins) => {
-        ins.initialize({ slideNumber: false });
-    }
+    const initSlideInstance = () => {
+        Reveal.initialize({
+            embedded: true,
+            slideNumber: true,
+        });
+    };
 
-    const configSlidesInstance = (ins) => {
-        ins.configure({
+    const configSlidesInstance = () => {
+        Reveal.configure({
             keyboard: {
                 70: null, // F
                 27: removeRevealNode, // esc
