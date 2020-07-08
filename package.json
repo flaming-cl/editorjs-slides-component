@@ -1,11 +1,13 @@
 {
   "name": "editorjs-slides-component",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "A React component for turning your editorjs blocks into web slides",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npx babel src --out-dir lib",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -23,15 +25,16 @@
   },
   "homepage": "https://github.com/flaming-cl/editorjs-slides-component#readme",
   "devDependencies": {
-    "@babel/preset-react": "^7.10.4",
+    "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "raw-loader": "^4.0.1",
-    "style-loader": "^1.2.1",
     "react": "^16.6.1",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "style-loader": "^1.2.1"
   },
   "dependencies": {
     "reveal.js": "^4.0.2"
