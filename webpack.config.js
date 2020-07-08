@@ -23,7 +23,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(svg)$/,
+                test: /\.(png)$/,
                 use: [
                     {
                         loader: 'raw-loader',
