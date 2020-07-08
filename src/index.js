@@ -33,7 +33,8 @@ const EditorSlides = (props) => {
         if (blocks.length) {
             for (var i = 0; i < blocks.length; i++) {
                 const singleBlock = blocks[i];
-                newSlideData.push(singleBlock.innerHTML);
+                const hasContent = singleBlock.innerText && singleBlock.innerText.trim();
+                if (hasContent) newSlideData.push(singleBlock.innerHTML);
             }
         }
         setSlidesData(newSlideData);
@@ -50,7 +51,7 @@ const EditorSlides = (props) => {
     };
 
     const initSlidesInstance = (ins) => {
-        ins.initialize({ slideNumber: true });
+        ins.initialize({ slideNumber: false });
     }
 
     const configSlidesInstance = (ins) => {

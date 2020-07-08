@@ -7,7 +7,7 @@ const SlidesButton = (props) => {
     return (
         <div className={btnClassName}>
             <img
-                className="slides-btn"
+                className="editorjs-compo-slides-btn-0933"
                 src={src || PRESENTATION}
                 onClick={presentSlides} />
         </div>
